@@ -1,0 +1,44 @@
+PROCÉDURE D'INSTALLATION DU CONNECTEUR PowerInformixRetro 
+----------------------------------------------------------
+
+* prérequis: assurez vous d'avoir installé et configurer le driver ODBC 64bits pour informix Sur le(s) PC(s) où est installé PowerBi Desktop et sur le(s) serveur(s) executant la Passerelle Power Bi)
+
+ --> clientsdk.4.10.FC15.windows64.zip (compte gratuit requis pour accéder au téléchargement). 
+ http://www.ibm.com/support/fixcentral/swg/quickorder?parent=ibm%2FInformation%20Management&product=ibm/Information+Management/Informix+Client+Software+Development+Kit&release=All&platform=All&function=fixId&fixids=clientsdk.4.10.FC15.windows64&includeRequisites=1&includeSupersedes=0&downloadMethod=http&source=fc
+ 
+
+
+Power BI Desktop
+-----------------
+
+1. Fermez Power BI Desktop s'il est ouvert.
+
+2. Copiez le fichier PowerInformixRetro.mez dans le dossier des connecteurs personnalisés de Power BI Desktop. Pour les versions récentes de Power BI Desktop, le dossier est généralement situé ici : "%USERPROFILE%\Documents\Power BI Desktop\Custom Connectors"
+   Si le dossier "Custom Connectors" n'existe pas, créez-le.
+
+3. Activez les connecteurs personnalisés dans Power BI Desktop en suivant ces étapes :
+	- Ouvrez Power BI Desktop.
+	- Cliquez sur "Fichier" puis sur "Options et paramètres" et enfin sur "Options".
+	- Dans la fenêtre "Options", accédez à la section "Sécurité".
+	- Sous "Extensions de données", sélectionnez "Autoriser les extensions de données non approuvées" et cliquez sur "OK".
+	- Redémarrez Power BI Desktop.
+    Vous devriez maintenant voir votre connecteur personnalisé dans Power BI Desktop sous l'onglet "Accueil" -> "Obtenir des données" -> "Plus..." -> "Autres" --> PowerInformixRetro.
+
+
+
+Passerelle Power BI
+--------------------
+
+1. Installez la passerelle Power BI sur votre serveur si vous ne l'avez pas déjà fait.
+
+2. Créez un dossier nommé "Custom Connectors" à la racine du Serveur (ex. "C:\Custom Connectors").
+
+3. Copiez le fichier PowerInformixRetro.mez de votre connecteur personnalisé dans le dossier.
+
+4. Lancez "EnterpriseGatewayConfigurator" 
+
+5. Cliquez sur l'onglet "Connecteurs", selectionnez les "..." et définissez le dossier des connecteurs personnalisés sur "C:\Custom Connectors".
+
+6. Cliquez sur l'onglet "Paramètres de service" et cliquez sur "Redémarrer maintenant"
+
+Après avoir effectué ces étapes, votre connecteur personnalisé devrait être disponible dans la passerelle Power BI.
